@@ -12,9 +12,9 @@
 :set autoindent
 :set expandtab
 :set nowrap
-:set scrolloff=8
-call plug#begin()
+:set scrolloff=5
 
+call plug#begin()
 Plug 'https://github.com/vim-airline/vim-airline'
 Plug 'https://github.com/preservim/nerdtree'
 Plug 'https://github.com/tpope/vim-commentary' 
@@ -25,28 +25,34 @@ Plug 'https://github.com/tc50cal/vim-terminal'
 Plug 'https://github.com/terryma/vim-multiple-cursors'
 Plug 'https://github.com/preservim/tagbar'
 Plug 'https://github.com/neoclide/coc.nvim'
-Plug 'https://github.com/tomasr/molokai'
 Plug 'https://github.com/morhetz/gruvbox'
 Plug 'https://github.com/jiangmiao/auto-pairs'
 Plug 'https://github.com/alvan/vim-closetag'
 Plug 'https://github.com/ervandew/supertab'
-Plug 'https://github.com/sainnhe/sonokai'
 Plug 'https://github.com/Rigellute/shades-of-purple.vim'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'https://github.com/ray-x/aurora'
+Plug 'liuchengxu/vim-clap'
+Plug 'glepnir/dashboard-nvim'
 call plug#end()
 
-nnoremap <C-f> :NERDTreeFocus<CR>
+" Mappings
 nnoremap <C-t> :NERDTreeToggle<CR>
 nmap <F8> :TagbarToggle<CR>
 nmap <C-p> :Prettier<CR>
+nmap <C-m> :%s/\"/'/g<CR>
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+nmap <silent> gd <Plug>(coc-definition)
+call togglerb#map("<F9>")
+" EndOfMappings
 
-:colorscheme shades_of_purple
+:colorscheme aurora
 
 hi Normal guibg=NONE ctermbg=NONE
-highlight ColorColumn ctermbg=cyan guibg=none
+highlight ColorColumn ctermbg=red guibg=none
+
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
-let g:airline_theme='simple'
+let g:dashboard_default_executive ='clap'
