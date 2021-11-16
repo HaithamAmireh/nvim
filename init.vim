@@ -13,10 +13,11 @@
 :set expandtab
 :set nowrap
 :set scrolloff=5
+:set termguicolors
 
 call plug#begin()
-Plug 'https://github.com/vim-airline/vim-airline'
 Plug 'https://github.com/preservim/nerdtree'
+Plug 'itchyny/lightline.vim'
 Plug 'https://github.com/tpope/vim-commentary' 
 Plug 'http://github.com/tpope/vim-surround'
 Plug 'https://github.com/ap/vim-css-color'
@@ -34,25 +35,29 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'https://github.com/ray-x/aurora'
 Plug 'liuchengxu/vim-clap'
 Plug 'glepnir/dashboard-nvim'
+Plug 'https://github.com/machakann/vim-colorscheme-imas'
+Plug 'frazrepo/vim-rainbow'
 call plug#end()
 
 " Mappings
 nnoremap <C-t> :NERDTreeToggle<CR>
 nmap <F8> :TagbarToggle<CR>
 nmap <C-p> :Prettier<CR>
-nmap <C-m> :%s/\"/'/g<CR>
+nmap <C-m> :%s/\'/'/g<CR>
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 nmap <silent> gd <Plug>(coc-definition)
-call togglerb#map("<F9>")
+call togglerb#map('<F9>')
 " EndOfMappings
 
-:colorscheme aurora
+:colorscheme imas
 
 hi Normal guibg=NONE ctermbg=NONE
-highlight ColorColumn ctermbg=red guibg=none
+highlight ColorColumn ctermbg=magenta 
 
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 let g:dashboard_default_executive ='clap'
+let g:rainbow_active = 1
+
