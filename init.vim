@@ -39,6 +39,7 @@ Plug 'liuchengxu/vim-clap'
 Plug 'glepnir/dashboard-nvim'
 Plug 'https://github.com/machakann/vim-colorscheme-imas'
 Plug 'frazrepo/vim-rainbow'
+Plug 'https://github.com/tiagofumo/vim-nerdtree-syntax-highlight'
 call plug#end()
 
 " Mappings
@@ -53,19 +54,18 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 nmap <silent> gd <Plug>(coc-definition)
 inoremap \\ <Esc>
-let mapleader = ";"
-nnoremap <leader>st :sp<space>\|<space>terminal<CR>
 inoremap <A-j> <Esc>:m .+1<CR>==gi
 inoremap <A-k> <Esc>:m .-2<CR>==gi
 vnoremap <A-j> :m '>+1<CR>gv=gv
 vnoremap <A-k> :m '<-2<CR>gv=gv
 " EndOfMappings
 
+" Looks
 :colorscheme imas
-
 hi Normal guibg=NONE ctermbg=NONE
 highlight ColorColumn ctermbg=magenta 
+" End
+
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 let g:dashboard_default_executive ='clap'
 let g:rainbow_active = 1
-
