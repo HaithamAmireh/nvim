@@ -13,7 +13,7 @@
 :set expandtab
 :set nowrap
 :set scrolloff=5
-:set termguicolors
+" :set termguicolors
 :set cursorline
 :set spelllang=en_us
 :set splitbelow splitright
@@ -38,8 +38,8 @@ Plug 'https://github.com/ray-x/aurora'
 Plug 'liuchengxu/vim-clap'
 Plug 'glepnir/dashboard-nvim'
 Plug 'https://github.com/machakann/vim-colorscheme-imas'
-Plug 'frazrepo/vim-rainbow'
 Plug 'https://github.com/tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'https://github.com/morhetz/gruvbox'
 call plug#end()
 
 " Mappings
@@ -61,11 +61,13 @@ vnoremap <A-k> :m '<-2<CR>gv=gv
 " EndOfMappings
 
 " Looks
-:colorscheme imas
+:colorscheme aurora
+
 hi Normal guibg=NONE ctermbg=NONE
-highlight ColorColumn ctermbg=magenta 
+highlight ColorColumn ctermbg=gray
 " End
 
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 let g:dashboard_default_executive ='clap'
 let g:rainbow_active = 1
+highlight CursorLine ctermbg=darkGray
