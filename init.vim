@@ -1,10 +1,10 @@
 :set number
 :set relativenumber
 :set noerrorbells
-:set tabstop=4
-:set softtabstop=4
+:set tabstop=2
+:set softtabstop=2
 :set autoindent
-:set shiftwidth=4
+:set shiftwidth=2
 :set smarttab
 :set mouse=a
 :set signcolumn=yes
@@ -14,7 +14,7 @@
 :set nowrap
 :set scrolloff=5
 " :set termguicolors
-:set cursorline
+" :set cursorline
 :set spelllang=en_us
 :set splitbelow splitright
 
@@ -40,6 +40,9 @@ Plug 'glepnir/dashboard-nvim'
 Plug 'https://github.com/machakann/vim-colorscheme-imas'
 Plug 'https://github.com/tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'https://github.com/morhetz/gruvbox'
+Plug 'https://github.com/sickill/vim-monokai'
+Plug 'kyoz/purify', { 'rtp': 'vim' }
+Plug 'https://github.com/julien/vim-colors-green'
 call plug#end()
 
 " Mappings
@@ -61,10 +64,11 @@ vnoremap <A-k> :m '<-2<CR>gv=gv
 " EndOfMappings
 
 " Looks
-:colorscheme aurora
-
-hi Normal guibg=NONE ctermbg=NONE
+:colorscheme gruvbox
+highlight Normal guibg=NONE ctermbg=NONE
+highlight Normal ctermfg=darkgreen
 highlight ColorColumn ctermbg=gray
+highlight LineNr ctermfg=cyan
 " End
 
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
