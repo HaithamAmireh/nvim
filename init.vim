@@ -64,11 +64,12 @@ vnoremap <A-k> :m '<-2<CR>gv=gv
 " EndOfMappings
 
 " Looks
-:colorscheme gruvbox
+:colorscheme slate
 highlight Normal guibg=NONE ctermbg=NONE
-highlight Normal ctermfg=darkgreen
+" highlight Normal ctermfg=white
 highlight ColorColumn ctermbg=gray
 highlight LineNr ctermfg=cyan
+highlight SignColumn ctermbg=red
 " End
 
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
