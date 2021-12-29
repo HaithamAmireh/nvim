@@ -1,10 +1,10 @@
 :set number
 :set relativenumber
 :set noerrorbells
-:set tabstop=2
-:set softtabstop=2
+:set tabstop=4
+:set softtabstop=4
 :set autoindent
-:set shiftwidth=2
+:set shiftwidth=4
 :set smarttab
 :set mouse=a
 :set signcolumn=yes
@@ -43,6 +43,9 @@ Plug 'https://github.com/morhetz/gruvbox'
 Plug 'https://github.com/sickill/vim-monokai'
 Plug 'kyoz/purify', { 'rtp': 'vim' }
 Plug 'https://github.com/julien/vim-colors-green'
+Plug 'lukas-reineke/indent-blankline.nvim'
+Plug 'vim-test/vim-test'
+Plug 'wfxr/minimap.vim'
 call plug#end()
 
 " Mappings
@@ -61,10 +64,14 @@ inoremap <A-j> <Esc>:m .+1<CR>==gi
 inoremap <A-k> <Esc>:m .-2<CR>==gi
 vnoremap <A-j> :m '>+1<CR>gv=gv
 vnoremap <A-k> :m '<-2<CR>gv=gv
+nmap <F12> :TestFile -v --html=report.html<CR>
 " EndOfMappings
 
 " Looks
-:colorscheme slate
+let g:minimap_width = 10
+let g:minimap_auto_start = 1
+let g:minimap_auto_start_win_enter = 1
+:colorscheme aurora
 highlight Normal guibg=NONE ctermbg=NONE
 " highlight Normal ctermfg=white
 highlight ColorColumn ctermbg=gray
